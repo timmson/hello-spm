@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "hello-spm",
+    name: "HelloSpm",
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
@@ -14,10 +14,12 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .executableTarget(
-            name: "hello-spm",
-            dependencies: []),
+            name: "Main",
+            dependencies: ["HelloSpm"]),
+        .target(
+            name: "HelloSpm"),
         .testTarget(
-            name: "hello-spmTests",
-            dependencies: ["hello-spm"]),
+            name: "HelloSpmTests",
+            dependencies: ["HelloSpm"]),
     ]
 )
